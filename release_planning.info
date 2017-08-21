@@ -1,0 +1,22 @@
+RELEASE 1: Simple view/book flow w/ kitchens preexisting
+    As a guest, I can view a list of kitchens
+    As a guest, I can view a kitchen's page
+    As a guest, I can book a kitchen
+    As a user, I can navigate on the website from the navbar (with functional links, e.g. "signin/signout", "My bookings", "Publish an offer", etc.)
+
+RELEASE 2: Simple host listing functionality
+    As a host, I can add a kitchen to the platform
+    As a host, I can add pictures for my kitchen
+
+LATER RELEASES:
+    As a guest, I can locate kitchens on a map
+
+  Interaction pack
+    As a user, I can log in with Facebook
+    As a host, I can receive an email when someone books my kitchen
+    As a guest, I can add reviews for a kitchen I've stayed in
+
+    As a guest, I can search for kitchens
+    As a visitor, I want to understand the service
+
+    As a guest, I want to see availability of a kitchen
