@@ -6,8 +6,6 @@ class BookingsController < ApplicationController
   def create
     @kitchen = Kitchen.find(params[:kitchen_id])
     @booking = Bookings.new(booking_params)
-
-
   end
 
   def booking_params
