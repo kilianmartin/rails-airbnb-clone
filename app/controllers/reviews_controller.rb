@@ -8,7 +8,9 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @booking_id = 1
     @review = Review.new
+    @user_id = 1
   end
 
   def create
