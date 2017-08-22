@@ -1,6 +1,6 @@
 .description-wrapper {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 70% 30%;
   grid-teplate-row: 100%
 }
 
@@ -14,10 +14,6 @@
   }
 }
 
-.review-wrapper {
-  display: flex
-}
-
 .right-wrapper {
   grid-column: 2 / 2;
   grid-row: 1 / 1;
@@ -29,6 +25,10 @@
     margin-top: 5px;
     color: $orange;
     text-align: center;
+  }
+  position: sticky;
+  td {
+    width: 50%
   }
 }
 
