@@ -1,3 +1,34 @@
 .description-wrapper {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-teplate-row: 100%
+}
+
+.left-wrapper {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  margin: 20px;
+  padding: 20px;
+  h2 {
+    margin-top: 5px;
+  }
+}
+
+.review-wrapper {
   display: flex
 }
+
+.right-wrapper {
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+  box-shadow: 0 0 1em #DDDDDD;
+  border-radius: 0.25em;
+  margin: 20px;
+  padding: 20px;
+  h2 {
+    margin-top: 5px;
+    color: $orange;
+    text-align: center;
+  }
+}
+

@@ -4,49 +4,41 @@
 <div class="header" style="background-image: url('<%= cl_image_path("kitchen_header")%>');">
   <div class="banner-content">
    <% kitchen = @kitchen %>
-    <h1><%= kitchen.user_id %>Kitchen!</h1>
-<%= link_to "Book now!", kitchen_bookings_path(kitchen), {class: "btn btn-primary btn-lg"} %>
-  </div>
+   <h1><%= kitchen.user_id %>Kitchen!</h1>
+   <%= link_to "Book now!", kitchen_bookings_path(kitchen), {class: "btn btn-primary btn-lg"} %>
+ </div>
 </div>
 <div class="container-fluid">
-<div class="description-wrapper">
+  <div class="description-wrapper">
 
-<div class="right-wrapper">
-<h2>Kitchen details:</h2>
-  <% kitchen = @kitchen %>
-    <h3> <%= kitchen.title %> </h3>
-    <p>Kitchen owned by: <%= kitchen.user_id %>
-    </p>
-    <p>Kitchen located at: <%= kitchen.address %>
-    </p>
-    <p>Kitchen description: <%= kitchen.description %>
-    </p>
-</div>
-    <p> Kitchen booked by :
-      <%
-=begin %><% kitchen.bookings.each do |booking| %>
-        <%= booking.user_id %>
-        from
-        <%= booking.start_date %>
-        to
-        <%= booking.end_date %>
-      <% end %>
-    </p>
+    <div class="left-wrapper">
+     <h2>Reviews for this kitchen</h2>
+     <%= link_to "Add Review", new_kitchen_review_path(@kitchen), class: "btn btn-primary" %>
+     <div class="review">
+       <% @kitchen.reviews.each do |review| %>
+       <div class="review-name">
+       <h3><%= review.title %></h3>
+       <p><%= review.rating %></p>
+       </div>
+       <div class="review-body">
+       <h4><%= review.subtitle %></h4>
+       <p><%= review.comment %></p>
+       </div>
+       <%= link_to "Delete", kitchen_review_path(@kitchen), method: :delete %>
+       <%= link_to " - Edit", edit_kitchen_review_path(@kitchen) %>
+       <% end %>
+     </div>
+   </div>
 
-    <%= link_to "Book now", new_kitchen_booking_path(kitchen)  %>
-    <%
-=end %>
-</div>
+   <div class="right-wrapper">
+    <h2>Kitchen details:</h2>
+    <% kitchen = @kitchen %>
+    <ul>
+      <li><strong> Kitchen owned by:</strong> <%= kitchen.user_id %></li>
+      <li><strong> Kitchen located at:</strong> <%= kitchen.address %></li>
+      <li><strong> Kitchen description:</strong> <%= kitchen.description %></li>
+    </ul>
+  </div>
 
-  <h3><%= "Reviews for this kitchen" %></h3>
-    <%= link_to "Add Review", new_kitchen_review_path(@kitchen), class: "btn btn-primary" %>
-    <% @kitchen.reviews.each do |review| %>
-  <h3><%= review.title %></h3>
-  <p><%= review.rating %></p>
-  <h4><%= review.subtitle %></h4>
-  <p><%= review.comment %></p>
-    <%= link_to "Delete", kitchen_review_path(@kitchen), method: :delete %>
-    <%= link_to " - Edit", edit_kitchen_review_path(@kitchen) %>
-  <% end %>
 </div>
 </div>
