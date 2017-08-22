@@ -12,6 +12,7 @@
     </p>
     <p>Kitchen description: <%= kitchen.description %>
     </p>
+
     <p> Kitchen booked by :
       <%
 =begin %><% kitchen.bookings.each do |booking| %>
@@ -27,3 +28,15 @@
     <%
 =end %>
 </div>
+
+<h3><%= "Reviews for this kitchen" %></h3>
+<%= link_to "Add Review", new_kitchen_review_path(@kitchen), class: "btn btn-primary" %>
+  <% @kitchen.reviews.each do |review| %>
+  <h3><%= review.title %></h3>
+  <p><%= review.rating %></p>
+  <h4><%= review.subtitle %></h4>
+  <p><%= review.comment %></p>
+  <%= link_to "Delete", kitchen_review_path(@kitchen), method: :delete %>
+  <%= link_to " - Edit", edit_kitchen_review_path(@kitchen) %>
+  <% end %>
+
