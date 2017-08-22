@@ -1,26 +1,29 @@
 <!-- for diagnosis -->
-<%= @kitchen %>
-
 <!-- use skelleton below to extract kitchen information into final design... -->
-<div class="container-fluid">
-  <div class="header">
-    <%= image_tag cl_image_path("kitchen_header", height: 250, width: 1000, crop: :scale) %>'
+
+<div class="header" style="background-image: url('<%= cl_image_path("kitchen_header")%>');">
+  <div class="banner-content">
+   <% kitchen = @kitchen %>
+    <h1><%= kitchen.user_id %>Kitchen!</h1>
+<%= link_to "Book now!", kitchen_bookings_path(kitchen), {class: "btn btn-primary btn-lg"} %>
   </div>
+</div>
+<div class="container-fluid">
+<div class="description-wrapper">
 
-  <div class="description-wrapper">
-
-    <% kitchen = @kitchen %>
-    <div class="kitchen">
-      <h3> <%= kitchen.title %> </h3>
-      <p>Kitchen owned by: <%= kitchen.user_id %>
-      </p>
-      <p>Kitchen located at: <%= kitchen.address %>
-      </p>
-      <p>Kitchen description: <%= kitchen.description %>
-      </p>
-
-      <p> Kitchen booked by :
-        <%
+<div class="right-wrapper">
+<h2>Kitchen details:</h2>
+  <% kitchen = @kitchen %>
+    <h3> <%= kitchen.title %> </h3>
+    <p>Kitchen owned by: <%= kitchen.user_id %>
+    </p>
+    <p>Kitchen located at: <%= kitchen.address %>
+    </p>
+    <p>Kitchen description: <%= kitchen.description %>
+    </p>
+</div>
+    <p> Kitchen booked by :
+      <%
 =begin %><% kitchen.bookings.each do |booking| %>
         <%= booking.user_id %>
         from
