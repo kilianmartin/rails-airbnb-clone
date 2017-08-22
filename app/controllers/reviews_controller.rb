@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @kitchen = Kitchen.find(params[:kitchen_id])
+    @booking = @kitchen.bookings.first
     @user_id = 1
   end
 
