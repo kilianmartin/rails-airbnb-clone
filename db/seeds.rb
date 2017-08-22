@@ -16,6 +16,8 @@ User.destroy_all
   )
 end
 
+# Use later maybe, when we update user model: name: Faker::Internet.user_name(5..8)
+
 kitchen_contents = [
   {
     title: "Bratwurst kitchen",
@@ -73,28 +75,29 @@ kitchen_contents = [
   },
 ]
 
-bookings = [
+kitchen_contents.each do |kitchen_content|
+  Kitchen.create(kitchen_content)
+end
+
+booking_contents = [
   {
   start_date: Date.new(2017,8,21),
   end_date: Date.new(2017,8,25),
   status: "Pending",
-  user_id: 31,
-  kitchen_id: 10
+  user_id: User.ids[1],
+  kitchen_id: Kitchen.ids[0]
   },
   {
   start_date: Date.new(2017,9,01),
   end_date: Date.new(2017,9,03),
   status: "Confirmed",
-  user_id: 33,
-  kitchen_id: 17
+  user_id: User.ids[0],
+  kitchen_id: Kitchen.ids[1]
   }
 ]
 
-byebug
-
-
-kitchen_contents.each do |kitchen_content|
-  Kitchen.create(kitchen_content)
+booking_contents.each do |booking_content|
+  Booking.create(booking_content)
 end
 
-# name: Faker::Internet.user_name(5..8)
+
