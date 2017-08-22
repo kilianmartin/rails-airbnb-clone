@@ -19,6 +19,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'faker'
+gem 'bootstrap-datepicker-rails'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'pry-byebug'
