@@ -7,9 +7,13 @@
    <h1><%= kitchen.user_id %>Kitchen!</h1>
    <%= link_to "Book now!", kitchen_bookings_path(kitchen), {class: "btn btn-primary btn-lg btn-orange"} %>
  </div>
+
 </div>
 <div class="container-fluid">
   <div class="description-wrapper">
+
+
+    <%= link_to "Overview", kitchens_path %>
 
     <div class="left-wrapper">
      <h2>Reviews for this kitchen</h2>

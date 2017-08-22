@@ -1,0 +1,10 @@
+<h3><%= "Thank you for your review!" %></h3>
+<%= simple_form_for [ @kitchen, @review ] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :subtitle %>
+  <%= f.input :rating %>
+  <%= f.input :comment %>
+  <% f.input :user_id, as: :hidden, input_html: { value: @user_id } %>
+  <%= f.input :kitchen_id, as: :hidden, input_html: { value: @kitchen_id } %>
+  <%= f.button :submit %>
+<% end %>

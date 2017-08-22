@@ -9,11 +9,17 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @kitchen = Kitchen.find(params[:kitchen_id])
+    @booking = @kitchen.bookings.first
+    @user_id = 1
   end
 
   def create
     @review = Review.new(review_params)
+    @kitchen = Kitchen.find(params[:kitchen_id])
+    @review.kitchen = @kitchen
     @review.save
+    redirect_to kitchens_path
   end
 
   def edit
