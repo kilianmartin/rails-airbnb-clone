@@ -2,19 +2,25 @@
 <%= @kitchen %>
 
 <!-- use skelleton below to extract kitchen information into final design... -->
+<div class="container-fluid">
+  <div class="header">
+    <%= image_tag cl_image_path("kitchen_header", height: 250, width: 1000, crop: :scale) %>'
+  </div>
 
-<% kitchen = @kitchen %>
-<div class="kitchen">
-  <h3> <%= kitchen.title %> </h3>
-    <p>Kitchen owned by: <%= kitchen.user_id %>
-    </p>
-    <p>Kitchen located at: <%= kitchen.address %>
-    </p>
-    <p>Kitchen description: <%= kitchen.description %>
-    </p>
+  <div class="description-wrapper">
 
-    <p> Kitchen booked by :
-      <%
+    <% kitchen = @kitchen %>
+    <div class="kitchen">
+      <h3> <%= kitchen.title %> </h3>
+      <p>Kitchen owned by: <%= kitchen.user_id %>
+      </p>
+      <p>Kitchen located at: <%= kitchen.address %>
+      </p>
+      <p>Kitchen description: <%= kitchen.description %>
+      </p>
+
+      <p> Kitchen booked by :
+        <%
 =begin %><% kitchen.bookings.each do |booking| %>
         <%= booking.user_id %>
         from
@@ -29,14 +35,15 @@
 =end %>
 </div>
 
-<h3><%= "Reviews for this kitchen" %></h3>
-<%= link_to "Add Review", new_kitchen_review_path(@kitchen), class: "btn btn-primary" %>
-  <% @kitchen.reviews.each do |review| %>
+  <h3><%= "Reviews for this kitchen" %></h3>
+    <%= link_to "Add Review", new_kitchen_review_path(@kitchen), class: "btn btn-primary" %>
+    <% @kitchen.reviews.each do |review| %>
   <h3><%= review.title %></h3>
   <p><%= review.rating %></p>
   <h4><%= review.subtitle %></h4>
   <p><%= review.comment %></p>
-  <%= link_to "Delete", kitchen_review_path(@kitchen), method: :delete %>
-  <%= link_to " - Edit", edit_kitchen_review_path(@kitchen) %>
+    <%= link_to "Delete", kitchen_review_path(@kitchen), method: :delete %>
+    <%= link_to " - Edit", edit_kitchen_review_path(@kitchen) %>
   <% end %>
-
+</div>
+</div>
