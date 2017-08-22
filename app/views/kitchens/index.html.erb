@@ -1,1 +1,15 @@
-kitchen index
+<!-- for diagnosis -->
+<%= @kitchens %>
+
+<!-- use skelleton below to extract kitchen information into final design... -->
+<% @kitchens.each do |kitchen| %>
+  <div class="kitchen">
+    <h3> <%= kitchen.title %> </h3>
+      <p>Kitchen owned by: <%= kitchen.user_id %>
+      </p>
+      <p>Kitchen located at: <%= kitchen.address %>
+      </p>
+      <p>Kitchen description: <%= kitchen.description %>
+      </p>
+  </div>
+<% end %>
