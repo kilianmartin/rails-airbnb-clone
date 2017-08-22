@@ -24,9 +24,10 @@
     </p>
 
     <%= link_to "Book now", new_kitchen_booking_path(kitchen)  %>
-    <%
-=end %>
+
 </div>
+
+<%= link_to "Overview", kitchens_path %>
 
 <h3><%= "Reviews for this kitchen" %></h3>
 <%= link_to "Add Review", new_kitchen_review_path(@kitchen), class: "btn btn-primary" %>
