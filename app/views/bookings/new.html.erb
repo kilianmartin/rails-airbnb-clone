@@ -2,10 +2,11 @@
   <%= form.input :status, as: :string %>
   <%= form.input :user_id, as: :hidden, input_html: {value: @user_id } %>
   <%= form.input :kitchen_id, as: :hidden, input_html: {value: @kitchen_id } %>
+  <%= form.input :start_date, as: :string, input_html: { class: 'datepicker' } %>
+    <%= form.input :end_date, as: :string, input_html: { class: 'datepicker' } %>
 
   <%= form.button :submit %>
 <% end %>
-
 
 
 <!--
