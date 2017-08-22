@@ -8,8 +8,8 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @booking_id = 1
     @review = Review.new
+    @kitchen = Kitchen.find(params[:kitchen_id])
     @user_id = 1
   end
 

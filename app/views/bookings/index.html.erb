@@ -1,0 +1,13 @@
+<h3>Bookings for "<%= @kitchen.title %>":</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li>
+    From
+    <%= booking.start_date %> until <%= booking.end_date %>: <br>
+    <%= booking.status %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to kitchen", kitchen_path(@kitchen) %>
