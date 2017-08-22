@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @kitchen = Kitchen.find(params[:kitchen_id])
     # @user = User.find(params[:user_id])
     @user_id = 1
+    byebug
   end
 
   def create
