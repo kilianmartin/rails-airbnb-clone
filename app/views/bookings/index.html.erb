@@ -4,7 +4,10 @@
   <% @bookings.each do |booking| %>
   <li>
     From
-    <%= booking.start_date %> until <%= booking.end_date %>: <br>
+    <%= booking.start_date %> until <%= booking.end_date %>
+    by
+    <%= booking.user.id %> (<%= booking.user.email %>):
+    <br>
     <%= booking.status %>
   </li>
   <% end %>
