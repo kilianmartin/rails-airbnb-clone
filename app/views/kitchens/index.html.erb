@@ -1,15 +1,23 @@
 <!-- for diagnosis -->
-<%= @kitchens %>
-
+<!--<%= @kitchens %> -->
 <!-- use skelleton below to extract kitchen information into final design... -->
-<% @kitchens.each do |kitchen| %>
-  <div class="kitchen">
-    <h3> <%= kitchen.title %> </h3>
-      <p>Kitchen owned by: <%= kitchen.user_id %>
-      </p>
-      <p>Kitchen located at: <%= kitchen.address %>
-      </p>
-      <p>Kitchen description: <%= kitchen.description %>
-      </p>
+<div class="card-wrapper">
+<div class="container-fluid">
+  <% @kitchens.each do |kitchen| %>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("random_kitchen", height: 300, width: 400, crop: :fill) %>')">
+      <div class="card-category">Placeholder</div>
+      <div class="card-description">
+        <h2><%= kitchen.title %></h2>
+        <p>Kitchen owned by: <%= kitchen.user_id %>
+        </p>
+        <p>Kitchen located at: <%= kitchen.address %>
+        </p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <%= link_to "", kitchen_path(kitchen), {class: "card-link"} %>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>
+</div>
