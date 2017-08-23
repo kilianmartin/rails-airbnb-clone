@@ -7,17 +7,10 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-  def new
-    @review = Review.new
-    @kitchen = Kitchen.find(params[:kitchen_id])
-    @booking = @kitchen.bookings.first
-    @user_id = 1
-  end
-
   def create
     @review = Review.new(review_params)
-    @kitchen = Kitchen.find(params[:kitchen_id])
-    @review.kitchen = @kitchen
+    # @booking = Booking.find(params[:booking_id])
+    # @review.booking = @booking
     @review.save
     redirect_to kitchens_path
   end
