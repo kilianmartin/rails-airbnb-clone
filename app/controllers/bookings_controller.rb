@@ -4,6 +4,12 @@ class BookingsController < ApplicationController
     @bookings = @kitchen.bookings
   end
 
+  def show
+    @user = current_user
+    @booking = Booking.find(params[:id])
+    @review = Review.new
+  end
+
   def new
     @booking = Booking.new
     @kitchen = Kitchen.find(params[:kitchen_id])
