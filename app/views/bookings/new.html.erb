@@ -14,6 +14,7 @@
         <%= simple_form_for([ @kitchen, @booking ]) do |form| %>
         <%= form.input :start_date, as: :string, input_html: { class: 'datepicker' } %>
         <%= form.input :end_date, as: :string, input_html: { class: 'datepicker' } %>
+        <%= form.input :status, as: :hidden, :input_html => { :value => 'Pending' } %>
         <%= form.button :submit %>
         <% end %>
       </div>
