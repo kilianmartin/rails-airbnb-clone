@@ -1,1 +1,8 @@
-<h1><%= "test" %></h1>
+<div class="overview col-xs-8 col-xs-offset-2">
+<% @bookings.each do |booking| %>
+<div class="row">
+  <%= booking.kitchen.title %>
+  <%= "Booked from: " + booking.start_date.to_s + " to " + booking.end_date.to_s %>
+</div>
+<% end %>
+</div>
