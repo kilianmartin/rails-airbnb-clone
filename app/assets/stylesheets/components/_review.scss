@@ -1,3 +1,12 @@
+.review-header {
+  padding: 10px;
+  align-items: center;
+  margin-left: 130px,
+}
+
+.review-button {
+  margin: 0 auto;
+}
 .review {
   display: flex;
   align-items: center;
@@ -31,7 +40,10 @@
 }
 .review-body {
   padding-left: 20px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,1);
+}
+.review-subbody {
+  color: rgba(0,0,0,0.7);
 }
 .review-body strong{
   color: rgba(0,0,0,0.9);
@@ -39,4 +51,10 @@
 }
 .review-body p {
   margin: 6px 0;
+}
+
+.overview {
+  margin-left: 130px;
+  padding: 10px;
+  align-items: center;
 }

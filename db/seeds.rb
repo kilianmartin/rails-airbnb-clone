@@ -16,6 +16,8 @@ User.destroy_all
   )
 end
 
+
+
 # Use later maybe, when we update user model: name: Faker::Internet.user_name(5..8)
 
 kitchen_contents = [
@@ -79,25 +81,52 @@ kitchen_contents.each do |kitchen_content|
   Kitchen.create(kitchen_content)
 end
 
-booking_contents = [
-  {
-  start_date: Date.new(2017,8,21),
-  end_date: Date.new(2017,8,25),
-  status: "Pending",
-  user_id: User.ids[1],
-  kitchen_id: Kitchen.ids[0]
-  },
-  {
-  start_date: Date.new(2017,9,01),
-  end_date: Date.new(2017,9,03),
-  status: "Confirmed",
-  user_id: User.ids[0],
-  kitchen_id: Kitchen.ids[1]
-  }
-]
-
-booking_contents.each do |booking_content|
-  Booking.create(booking_content)
+for kitchen in Kitchen.ids
+  Booking.create([
+    {
+    start_date: Date.new(2017,8,21),
+    end_date: Date.new(2017,8,25),
+    status: "Pending",
+    user_id: User.ids[1],
+    kitchen_id: kitchen
+    },
+     {
+    start_date: Date.new(2017,8,21),
+    end_date: Date.new(2017,8,25),
+    status: "Pending",
+    user_id: User.ids[2],
+    kitchen_id: kitchen
+    },
+     {
+    start_date: Date.new(2017,8,21),
+    end_date: Date.new(2017,8,25),
+    status: "Pending",
+    user_id: User.ids[3],
+    kitchen_id: kitchen
+    },
+     {
+    start_date: Date.new(2017,8,21),
+    end_date: Date.new(2017,8,25),
+    status: "Pending",
+    user_id: User.ids[4],
+    kitchen_id: kitchen
+    },
+     {
+    start_date: Date.new(2017,8,21),
+    end_date: Date.new(2017,8,25),
+    status: "Pending",
+    user_id: User.ids[5],
+    kitchen_id: kitchen
+    }])
 end
 
-
+for booking in Booking.ids
+  Review.create({
+    title: Faker::Hacker.say_something_smart,
+    rating: rand(1..5),
+    subtitle: Faker::Hacker.say_something_smart,
+    comment: "Hodor! Hodor hodor, HODOR hodor, hodor HODOR hodor, hodor hodor; hodor hodor hodor! Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor - hodor hodor! Hodor hodor HODOR! Hodor hodor... Hodor hodor HODOR hodor, hodor hodor hodor! Hodor. Hodor hodor, hodor. Hodor hodor - hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor hodor - hodor... Hodor hodor hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor; hodor hodor, hodor. Hodor hodor. Hodor. Hodor! Hodor hodor, hodor - hodor - hodor hodor! Hodor hodor; hodor hodor; hodor hodor, hodor. Hodor hodor; hodor hodor, hodor, hodor hodor.",
+    booking_id: 1
+  }
+  )
+end
