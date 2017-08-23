@@ -125,7 +125,7 @@ for booking in Booking.ids
     title: Faker::Hacker.say_something_smart,
     rating: rand(1..5),
     subtitle: Faker::Hacker.say_something_smart,
-    comment: "Hodor! Hodor hodor, HODOR hodor, hodor HODOR hodor, hodor hodor; hodor hodor hodor! Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor - hodor hodor! Hodor hodor HODOR! Hodor hodor... Hodor hodor HODOR hodor, hodor hodor hodor! Hodor. Hodor hodor, hodor. Hodor hodor - hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor hodor - hodor... Hodor hodor hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor; hodor hodor, hodor. Hodor hodor. Hodor. Hodor! Hodor hodor, hodor - hodor - hodor hodor! Hodor hodor; hodor hodor; hodor hodor, hodor. Hodor hodor; hodor hodor, hodor, hodor hodor.",
+    comment: Faker::Lorem.paragraph(3, false, 4),
     booking_id: 1
   }
   )
