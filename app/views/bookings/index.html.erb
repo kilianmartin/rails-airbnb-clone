@@ -1,7 +1,7 @@
 <div class="header" style="background-image: url('<%= cl_image_path("kitchen_header")%>');">
   <div class="banner-content">
    <% kitchen = @kitchen %>
-   <h1><%= kitchen.user_id %>Kitchen!</h1>
+   <h1><%= kitchen.title %></h1>
    <%= link_to "Book now!", new_kitchen_booking_path(kitchen), {class: "btn btn-primary btn-lg btn-orange"} %>
  </div>
 </div>
