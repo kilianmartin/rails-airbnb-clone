@@ -18,7 +18,7 @@
           <%= link_to "", kitchen_path(booking.kitchen), {class: "card-link"} %>
         <div class="booking-details">
           <p><%= "Booked from: " + booking.start_date.to_s + " to " + booking.end_date.to_s %></p>
-          <%= link_to "review kitchen", new_kitchen_review_path(booking.kitchen) %>
+          <%= link_to "review kitchen", kitchen_booking_path(booking.kitchen, booking) %>
         </div>
       </div>
 

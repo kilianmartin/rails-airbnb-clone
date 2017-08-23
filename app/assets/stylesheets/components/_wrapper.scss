@@ -1,22 +1,23 @@
 .description-wrapper {
   display: grid;
   grid-template-columns: 70% 30%;
-  grid-teplate-row: 100%
+  grid-template-rows: 25% 75%;
 }
 
 .left-wrapper {
-  grid-column: 1 / 1;
-  grid-row: 1 / 1;
+  grid-column: 1 / 2;
+  grid-row: 1 / span 2;
   margin: 20px;
   padding: 20px;
   h2 {
     margin-top: 5px;
   }
+  overflow: scroll;
 }
 
 .right-wrapper {
   grid-column: 2 / 2;
-  grid-row: 1 / 1;
+  grid-row: 1 / span 1;
   box-shadow: 0 0 1em #DDDDDD;
   border-radius: 0.25em;
   margin: 20px;
@@ -26,7 +27,8 @@
     color: $orange;
     text-align: center;
   }
-  position: sticky;
+  position: sticky !important;
+  top: 40px;
   td {
     width: 50%
   }
@@ -46,3 +48,4 @@
     width: 50%
   }
 }
+
