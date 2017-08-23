@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     end
 
     @booking.save
-    redirect_to kitchen_bookings_path(@kitchen)
+    redirect_to kitchen_path(@kitchen)
   end
 
   def booking_params
