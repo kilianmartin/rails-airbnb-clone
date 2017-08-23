@@ -32,3 +32,17 @@
   }
 }
 
+.booking-wrapper {
+  box-shadow: 0 0 1em #DDDDDD;
+  border-radius: 0.25em;
+  margin: 20px;
+  padding: 20px;
+  h2 {
+    margin-top: 5px;
+    color: $orange;
+    text-align: center;
+  }
+  td {
+    width: 50%
+  }
+}
