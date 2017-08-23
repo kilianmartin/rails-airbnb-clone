@@ -3,29 +3,34 @@ class BookingsController < ApplicationController
     @kitchen = Kitchen.find(params[:kitchen_id])
     @bookings = @kitchen.bookings
   end
+
+  def show
+    @user = current_user
+    @booking = Booking.find(params[:id])
+    @review = Review.new
+  end
+
   def new
     @booking = Booking.new
     @kitchen = Kitchen.find(params[:kitchen_id])
-    # @user = User.find(params[:user_id])
-    @user_id = 1
-
   end
 
   def create
     @booking = Booking.create(booking_params)
+    @kitchen = Kitchen.find(params[:kitchen_id])
     @booking.kitchen = Kitchen.find(params[:kitchen_id])
 
-
-    # USER: NEXT LINE COMMENT IS HOW WE WANT IT TO WORK IN THE END
-    # @booking.user = User.find(params[:user_id])
+    if current_user
+      @booking.user = User.find(current_user.id)
+    else
+      @booking.user = User.find(1)
+    end
 
     @booking.save
-    byebug
-
-    redirect_to kitchens_path
+    redirect_to kitchen_bookings_path(@kitchen)
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :status, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end

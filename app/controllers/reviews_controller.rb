@@ -7,13 +7,12 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-  def new
-    @review = Review.new
-  end
-
   def create
     @review = Review.new(review_params)
+    # @booking = Booking.find(params[:booking_id])
+    # @review.booking = @booking
     @review.save
+    redirect_to kitchens_path
   end
 
   def edit
