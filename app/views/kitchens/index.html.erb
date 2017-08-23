@@ -1,11 +1,9 @@
-<!-- for diagnosis -->
-<!--<%= @kitchens %> -->
-<!-- use skelleton below to extract kitchen information into final design... -->
+
 <div class="card-wrapper">
 <div class="container-fluid">
   <% @kitchens.each do |kitchen| %>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-    <div class="card" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path("random_kitchen", height: 300, width: 400, crop: :fill) %>')">
+    <div class="card" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path('kitchen.photo.path', height: 300, width: 400, crop: :fill, :default_image => 'random_kitchen') %>')">
       <div class="card-category">Placeholder</div>
       <div class="card-description">
         <h2><%= kitchen.title %></h2>
