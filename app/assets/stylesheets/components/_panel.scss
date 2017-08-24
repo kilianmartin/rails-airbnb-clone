@@ -1,0 +1,19 @@
+.panel-wrapper {
+  padding-top: 10px;
+}
+
+.panel {
+  height: 500px;
+  width: 100%;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+  position: relative;
+  margin: 10px;
+  border-radius: 0.1em;
+}
+
+.panel-img-wrapper {
+  background-size: cover !important;
+  background-position: center;
+  position: absolute;
+}

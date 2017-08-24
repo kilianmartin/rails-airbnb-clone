@@ -124,7 +124,6 @@ for booking in Booking.ids
   Review.create({
     title: Faker::Hacker.say_something_smart,
     rating: rand(1..5),
-    subtitle: Faker::Hacker.say_something_smart,
     comment: Faker::Lorem.paragraph(3, false, 4),
     booking_id: 1
   }
