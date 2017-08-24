@@ -1,0 +1,15 @@
+.datepickertoinvisible {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+
+[class="day"] {
+    color: #0e9237;
+    font-weight: bold;
+}
+
+[class="disabled disabled-date day"] {
+    color: #dadada !important;
+}
+
