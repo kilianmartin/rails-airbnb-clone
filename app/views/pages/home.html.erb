@@ -1,0 +1,102 @@
+<div class="home-header" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.2), rgba(0,0,0,0)), url('<%= cl_image_path("home_banner", fill: :crop)%>');">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="home-banner-content">
+      <h1><%= "Find yours here!" %></h1>
+      <h3><%= "There is a perfect kitchen for every occasion" %></h3>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="explanation">
+    <div class="ex-card">
+      <%= cl_image_tag("cooking_icon", height: 100, width: 103) %>
+        <h3><%= "Choose a kitchen" %></h3>
+        <p><%= "Just use the search to find places near you with are available." %></p>
+
+    </div>
+    <div class="ex-card">
+        <%= cl_image_tag("booking_icon", height: 100, width: 103) %>
+        <h3><%= "Book the kitchen" %></h3>
+        <p><%= "Once you decided on a kitchen, simply book it with one click." %></p>
+
+    </div>
+    <div class="ex-card">
+        <%= cl_image_tag("cooking_pot_icon", height: 100, width: 103) %>
+        <h3><%= "Enjoy cooking" %></h3>
+        <p><%= "Invite your firends and family, decide on a menu and get cooking." %></p>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="col-xs-12 col-md-10 col-md-offset-1">
+  <div class="card-wrapper">
+    <div class="container-fluid">
+    <h1 id="sample-cards"><%= "Check these out:" %></h1>
+      <% kitchen_ids = Kitchen.ids.sample(3) %>
+      <% kitchen_ids.each do |kitchen_id| %>
+        <% kitchen = Kitchen.find(kitchen_id) %>
+        <div class="col-xs-12 col-md-4 ">
+        <% if kitchen.photo? %>
+          <div class="card" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path kitchen.photo.path, height: 300, width: 400, crop: :fill %>')">
+        <% else %>
+          <div class="card" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path('random_kitchen', height: 300, width: 400, crop: :fill) %>')">
+          <% end %>
+            <div class="card-category">Featured</div>
+            <div class="card-description">
+              <h2><%= kitchen.title %></h2>
+              <p>Kitchen owned by: <%= kitchen.user_id %>
+              </p>
+              <p>Kitchen located at: <%= kitchen.address %>
+              </p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <%= link_to "", kitchen_path(kitchen), {class: "card-link"} %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="testimonials">
+      <div class="testimonial-card testimonial-left">
+        <div class="row">
+        <div class="avatar-circle">
+          <%= cl_image_tag("emma", fill: :crop, class: "testimonial-avatars") %>
+        </div>
+        <h1><%= "Emma: Wonderful evening with Asian food!" %></h1>
+        <p><%= "I booked Will's kitchen for a dinner with eight other friends! We love to do experimental cooking and asian cuisine. Will's kitchen was just perfect for it with the wok station." %></p>
+      </div>
+    </div>
+      <div class="testimonial-card testimonial-right">
+        <div class="row">
+        <div class="avatar-circle avatar-circle-right">
+          <%= cl_image_tag("raphael", fill: :crop, class: "testimonial-avatars") %>
+        </div>
+        <h1><%= "Raphael:  Best date location I ever had !" %></h1>
+        <p><%= "I love to cook for people, especially for women I date, but my own kitchen is too small and not romantic at all! Miryam’s place was also small, but super cozy and well equipted!" %></p>
+      </div>
+    </div>
+      <div class="testimonial-card testimonial-left">
+        <div class="row">
+      <div class="avatar-circle">
+          <%= cl_image_tag("lucy", fill: :crop, class: "testimonial-avatars") %>
+        </div>
+        <h1><%= "Lucy: Wonderful evening with Italian food!" %></h1>
+        <p><%= "Rob’s and Lilly’s kitchen is the most awesome one I have ever seen! The huge wine cooler and the bar were just perfect for my birthdayparty! We will come back!" %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
