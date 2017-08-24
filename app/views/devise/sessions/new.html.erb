@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row" >
     <div class="col-xs-12 col-m-6 col-l-1" align="center">
-      <!-- <h2>Log in</h2> -->
+      <h2>Sign-in here</h2>
       <form class="form-inline">
         <div class="form-group">
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -10,7 +10,6 @@
             <%= f.input :password, label: false, placeholder: 'your password', required: false %>
             <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             <%= f.button :submit, "Log in", class: "btn btn-primary btn-md btn-orange" %>
-
           </div>
         </div>
         <% end %>
