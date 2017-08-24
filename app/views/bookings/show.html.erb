@@ -1,11 +1,16 @@
-<div class="col-xs-8 col-xs-offset-2">
-  <h3><%= "Thank you for your review!" %></h3>
-
-  <%= simple_form_for [ @booking.kitchen, @review ] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :rating %>
-  <%= f.input :comment %>
-  <%= f.input :booking_id, as: :hidden, input_html: { value: @booking.id } %>
-  <%= f.button :submit %>
-  <% end %>
+<div class="container">
+  <div class="row" >
+    <div class="col-xs-12 col-m-6 col-l-1" align="center">
+      <h3><%= "Place your review here:" %></h3>
+      <div class="form-group review-form-fields">
+        <%= simple_form_for [ @booking.kitchen, @review ] do |f| %>
+        <%= f.input :rating, collection: (1..5).to_a.reverse, label: false, prompt: "Rating: 1 to 5" %>
+        <%= f.input :title, label: false, placeholder: "Short title for your review" %>
+        <%= f.input :comment, label: false,  placeholder: "Your review comment. Max 500characters", input_html: { maxlength: 500, size: 500 } %>
+        <%= f.input :booking_id, as: :hidden, input_html: { value: @booking.id } %>
+        <%= f.button :submit, class: "btn btn-primary btn-md btn-orange" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -73,6 +73,7 @@
 
   <%= yield %>
 
+
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fa fa-github"></i></a>
@@ -85,7 +86,11 @@
 
 
   <%= javascript_include_tag 'application' %>
+
+  <%= yield(:after_js) %>
+
   <%= cloudinary_js_config %>
+
 
 </body>
 </html>

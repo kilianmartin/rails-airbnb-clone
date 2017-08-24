@@ -1,4 +1,5 @@
 $('.datepicker').datepicker({
     format: "dd/mm/yyyy",
-    datesDisabled: ['08/06/2017', '08/21/2017']
+    datesDisabled: ["21/08/2017", "22/08/2017", "23/08/2017", "24/08/2017", "25/08/2017"]
 });
+

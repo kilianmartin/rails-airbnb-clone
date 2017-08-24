@@ -5,27 +5,24 @@ class KitchensController < ApplicationController
 
   def show
     @kitchen = Kitchen.find(params[:id])
+
+    @booking = Booking.new
+    @bookings = @kitchen.bookings
+
+    @dates_booked = prepare_bookings_datepicker(@bookings)
   end
 
-  def new
-  end
+  def prepare_bookings_datepicker(bookings)
+   dates_all = []
+   bookings.each do |booking|
+     dates_current = (booking.start_date..booking.end_date).map{ |date| date.strftime("%y %b %d") }
+     dates_all = dates_all.concat(dates_current).uniq.sort_by { |date| date }
+   end
+   # need to do (DATE -> STRING -> DATE -> STRING) conversions to properly sort...
+   dates_all = dates_all.map{ |date| Date.strptime(date, "%y %b %d") }
+   dates_all.map{ |date| date.strftime("%d/%m/%Y") }.to_json.html_safe
+ end
 
-  def create
-  end
-
-  def edit
-    @kitchen = Kitchen.find(params[:id])
-  end
-
-  def update
-    @kitchen = Kitchen.find(params[:id])
-    @kitchen.update(kitchen_params)
-    redirect_to kitchen_path(@kitchen)
-  end
-
-  private
-
-  def kitchen_params
-    params.require(:kitchen).permit(:title, :address, :description, :photo)
-  end
 end
+
+
