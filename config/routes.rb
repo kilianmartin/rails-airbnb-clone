@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :show ]
   root to: "kitchens#index"
 
+  mount Attachinary::Engine => "/attachinary"
   resources :kitchens, only: [ :index, :show ] do
     resources :bookings, only: [ :new, :create, :index, :show ]
     resources :reviews
