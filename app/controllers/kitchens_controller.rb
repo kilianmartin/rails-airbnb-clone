@@ -12,7 +12,6 @@ class KitchensController < ApplicationController
     @dates_booked = prepare_bookings_datepicker(@bookings)
   end
 
-
   def prepare_bookings_datepicker(bookings)
    dates_all = []
    bookings.each do |booking|

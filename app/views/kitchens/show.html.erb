@@ -1,13 +1,20 @@
-<!-- for diagnosis -->
-<!-- use skelleton below to extract kitchen information into final design... -->
-
-
-
-<div class="header" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path("kitchen_header")%>');">
+<% if @kitchen.photo? %>
+<div class="header" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path @kitchen.photo.path, crop: :fill %>');">
+  <div class="banner-content">
+   <% kitchen = @kitchen %>
+   <h1> <%= kitchen.title %> </h1>
+   <%= link_to "Check availability", kitchen_bookings_path(kitchen), {class: "btn btn-primary btn-lg btn-orange"} %>
+ </div>
+ <% else %>
+ <div class="header" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path("kitchen_header")%>');">
   <div class="banner-content">
    <% kitchen = @kitchen %>
    <h1> <%= kitchen.title %> </h1>
  </div>
+ <% end %>
+</div>
+
+
 
 </div>
 <div class="container-fluid">
@@ -18,9 +25,8 @@
       </div>
       <div class="review-header">
        <h2>Reviews for this kitchen</h2>
-       <%= link_to "Add Review", new_kitchen_review_path(@kitchen), class: "btn btn-primary review-button" %>
       </div>
-        <% @kitchen.reviews.each do |review| %>
+        <% @kitchen.reviews.reverse.each do |review| %>
         <div class="review">
           <div class="review-name">
           <p><% review.rating.times do %>
@@ -32,11 +38,9 @@
             <div class="review-subbody">
              <p><%= review.comment %></p>
             </div>
-            <%= link_to "Delete", kitchen_review_path(@kitchen), method: :delete %>
-            <%= link_to " - Edit", edit_kitchen_review_path(@kitchen) %>
           </div>
         </div>
-        <% end %>
+      <% end %>
    </div>
 
    <div class="right-wrapper">
@@ -74,11 +78,17 @@
         <%= form.button :submit %>
         <% end %>
 
+
     </div>
   </div>
 
 </div>
 </div>
+
+<%= simple_form_for(@kitchen) do |f| %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.submit "Add photo", class: "btn btn-primary" %>
+<% end %>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
