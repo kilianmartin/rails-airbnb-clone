@@ -1,0 +1,26 @@
+.home-header {
+  height: 50vh;
+  background-size: cover !important;;
+  background-position: center center;
+  display: flex;
+  position: relative;
+}
+
+
+
+
+.home-banner-content h1 {
+  position: absolute;
+  top: 30px;
+  left: 270px;
+  color: white;
+  font-size: 50px;
+}
+
+.home-banner-content h3 {
+  position: absolute;
+  left: 40px;
+  color: $orange;
+  font-size: 27px;
+}
+

@@ -1,6 +1,3 @@
-<!-- for diagnosis -->
-<!-- use skelleton below to extract kitchen information into final design... -->
-
 <% if @kitchen.photo? %>
 <div class="header" style="background-image: linear-gradient( 45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('<%= cl_image_path @kitchen.photo.path, crop: :fill %>');">
   <div class="banner-content">
@@ -17,7 +14,6 @@
  </div>
  <% end %>
 </div>
-
 
 </div>
 <div class="container-fluid">

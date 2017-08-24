@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [ :show ]
-  root to: "kitchens#index"
+  root to: "pages#home"
 
   mount Attachinary::Engine => "/attachinary"
   resources :kitchens do

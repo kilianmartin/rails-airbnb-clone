@@ -1,0 +1,63 @@
+.testimonials {
+  margin: 50px 0px;
+}
+
+.testimonial-card {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  min-height: 150px;
+}
+
+.testimonial-card img {
+  max-height: 100%;
+  background-position: center center;
+}
+
+.testimonial-card h1 {
+  position: absolute;
+  margin-top: 0px;
+  font-size: 30px;
+}
+
+.testimonial-card p {
+  position: absolute;
+}
+
+.avatar-circle {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial-left h1 {
+  left: 170px;
+  top: 0px;
+}
+
+.testimonial-left p {
+  left: 170px;
+  top: 50px;
+}
+
+.testimonial-right h1 {
+  right: 170px;
+  top: 0px;
+}
+
+.testimonial-right p {
+  right: 170px;
+  top: 50px;
+}
+
+.avatar-circle-right img {
+  position: absolute;
+  right: 0px;
+}
+
+.avatar-circle-right {
+  position: absolute;
+  right: 0px;
+}
