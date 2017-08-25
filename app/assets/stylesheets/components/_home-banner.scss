@@ -4,22 +4,22 @@
   background-position: center center;
   display: flex;
   position: relative;
+  text-align: center;
 }
 
 .home-banner-content h1 {
-  position: absolute;
-  top: 45%;
-  right: 5%;
   color: white;
   font-size: 50px;
+  text-align: center
 }
 
 .home-banner-content p {
-  position: absolute;
-  top: 35%;
-  right: 14%;
-  color: $orange;
+  color: white;
   font-size: 35px;
   font-weight: bold;
+}
+
+.home-banner-text {
+
 }
 
