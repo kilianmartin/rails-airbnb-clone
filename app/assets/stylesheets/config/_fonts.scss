@@ -1,10 +1,13 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text|Reenie+Beanie");
+@import url('https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Lato:300i|Rouge+Script');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: 'Crimson Text', 'Times New Roman', serif;
+$body-font: "Montserrat", "Helvetica", "sans-serif";
+$headers-font: 'Libre Baskerville', 'Times New Roman', serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
