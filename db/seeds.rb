@@ -124,29 +124,36 @@ for kitchen in Kitchen.ids
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
+    user_id: User.ids[0],
+    kitchen_id: Kitchen.ids[0]
+    },
+    {
+    start_date: Date.new(2017,8,21),
+    end_date: Date.new(2017,8,25),
+    status: "Pending",
     user_id: User.ids[1],
-    kitchen_id: 18
+    kitchen_id: Kitchen.ids[1]
     },
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[2],
-    kitchen_id: 17
+    kitchen_id: Kitchen.ids[2]
     },
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[3],
-    kitchen_id: 16
+    kitchen_id: Kitchen.ids[3]
     },
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[4],
-    kitchen_id: 15
+    kitchen_id: Kitchen.ids[4]
     },
 
     {
@@ -154,7 +161,7 @@ for kitchen in Kitchen.ids
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[5],
-    kitchen_id: 14
+    kitchen_id: Kitchen.ids[5]
     },
 
     {
@@ -162,139 +169,93 @@ for kitchen in Kitchen.ids
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[6],
-    kitchen_id: 13
+    kitchen_id: Kitchen.ids[6]
     },
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[7],
-    kitchen_id: 12
+    kitchen_id: Kitchen.ids[7]
     },
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[8],
-    kitchen_id: 11
+    kitchen_id: Kitchen.ids[8]
     },
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[9],
-    kitchen_id: 10
+    kitchen_id: Kitchen.ids[9]
     },
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[10],
-    kitchen_id: 9
+    kitchen_id: Kitchen.ids[10]
     },
-
-
      {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[11],
-    kitchen_id: 8
-    },
-     {
-    start_date: Date.new(2017,8,21),
-    end_date: Date.new(2017,8,25),
-    status: "Pending",
-    user_id: User.ids[12],
-    kitchen_id: 7
-    },
-     {
-    start_date: Date.new(2017,8,21),
-    end_date: Date.new(2017,8,25),
-    status: "Pending",
-    user_id: User.ids[13],
-    kitchen_id: 6
-    },
-
-
-    {
-    start_date: Date.new(2017,8,21),
-    end_date: Date.new(2017,8,25),
-    status: "Pending",
-    user_id: User.ids[14],
-    kitchen_id: 5
-    },
-     {
-    start_date: Date.new(2017,8,21),
-    end_date: Date.new(2017,8,25),
-    status: "Pending",
-    user_id: User.ids[15],
-    kitchen_id: 4
-    },
-     {
-    start_date: Date.new(2017,8,21),
-    end_date: Date.new(2017,8,25),
-    status: "Pending",
-    user_id: User.ids[16],
-    kitchen_id: 3
-    },
-     {
-    start_date: Date.new(2017,8,21),
-    end_date: Date.new(2017,8,25),
-    status: "Pending",
-    user_id: User.ids[17],
-    kitchen_id: 2
-    },
-     {
-    start_date: Date.new(2017,8,21),
-    end_date: Date.new(2017,8,25),
-    status: "Pending",
-    user_id: User.ids[18],
-    kitchen_id: 1
+    kitchen_id: Kitchen.ids[11]
     }])
 end
 
-for booking in Booking.ids
-  Review.create([{
+
+REVIEW_PARAMS = [
+  {
     title: "Great spatula in this kitchen. Love it.",
     rating: rand(1..5),
     comment: "This kitchen was soo great. I particularly loved the spatula.",
-    booking_id: 1
   },
 
   {
     title: "Wok an awesome kitchen!",
     rating: rand(1..5),
     comment: "Wow. What an awesome wok in this kitchen. Nice blender too. Could do with a better wooden spoon.",
-    booking_id: 2
   },
 
   {
     title: "Great space, highly recommended",
     rating: rand(1..5),
     comment: "I really enjoyed this kitchen. Such a great space for cooking and dining with friends",
-    booking_id: 3
   },
 
   {
     title: "THIS KITCHEN HAS AN AWESOME BLENDER",
     rating: rand(1..5),
     comment: "I went to this kitchen expecting to chop. But I came away having successfully blended a lot too. Excellent blending, I will miss the blender.",
-    booking_id: 4
   },
 
   {
     title: "Wowzer - Global knives - cooolz. Lol.",
     rating: rand(1..5),
     comment: "Really great equipment in this kitchen. So please not to have some crappy Ikea stuff, but proper chef quality utensils.",
-    booking_id: 5
   },
 
   {
     title: "Leaky tap, over-priced, want my money back.",
     rating: rand(1..5),
     comment: "Do not book this place. Looks good in the pics but the tap leaks",
-    booking_id: 6
   }]
-  )
+
+
+
+Booking.all.each do |booking|
+  REVIEW_PARAMS.each do |review_params|
+    r = Review.new(review_params)
+
+    r.booking = booking
+    r.save!
+  end
+
+  booking.save!
+
 end
