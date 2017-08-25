@@ -3,14 +3,14 @@
 
     <div class="booking-header">
       <div class="booking-header-text">
-        <h2><%= "Hi " + @user.first_name %>,</h2>
-        <h2><%= "Your bookings:" %></h2>
+        <h2 class="font"><%= "Hi " + @user.first_name %>,</h2>
+        <h2 class="font"><%= "Your bookings:" %></h2>
       </div>
       <div class="booking-header-avatar">
         <%= image_tag "Logo-green.png", {class: "panel-logo"} %>
       </div>
       <div class="booking-offer">
-        <%= link_to "Plan your next kitchen adventure", kitchens_path, {class: "btn btn-primary btn-lg btn-orange"} %>
+        <%= link_to "Plan your next kitchen adventure", kitchens_path, {class: "btn btn-primary btn-lg btn-orange font"} %>
 
       </div>
     </div>
@@ -39,7 +39,7 @@
 
               <div class="panel-description">
                 <h2><%= booking.kitchen.title %></h2>
-                <p><%= booking.start_date %>- <%= booking.end_date %></p>
+                <p><%= booking.start_date %> to <%= booking.end_date %></p>
               </div>
 
               <div class="panel-review">
