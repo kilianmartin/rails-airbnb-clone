@@ -25,55 +25,64 @@ kitchen_contents = [
     title: "Bratwurst kitchen",
     address: "Berlin",
     description: "Intimate kitchen/dining space perfect for a bratwurst party",
-    user: User.find(User.ids[0])
+    user: User.find(User.ids[0]),
+    price: 15
   },
   {
     title: "English country-style kitchen",
     address: "London",
     description: "Rural charm in an urban setting",
-    user: User.find(User.ids[1])
+    user: User.find(User.ids[1]),
+    price: 28
   },
   {
     title: "Soupe à l'oignon kitchen",
     address: "Paris",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
-    user: User.find(User.ids[2])
+    user: User.find(User.ids[2]),
+    price: 40
   },
   {
     title: "Prego kitchen",
     address: "Lisbon",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
-    user: User.find(User.ids[3])
+    user: User.find(User.ids[3]),
+    price: 19
   },
   {
     title: "Sushi kitchen",
     address: "Tokyo",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
-    user: User.find(User.ids[4])
+    user: User.find(User.ids[4]),
+    price: 30
   },
   {
     title: "Tapas kitchen",
     address: "Barcelona",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
-    user: User.find(User.ids[5])
+    user: User.find(User.ids[5]),
+    price: 17
   },
   {
     title: "Fine European dining",
     address: "Brussels",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
-    user: User.find(User.ids[6])
+    user: User.find(User.ids[6]),
+    price: 25
   },
   {
     title: "Indonesian outdoor kitchen",
     address: "Bali",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
-    user: User.find(User.ids[7])
+    user: User.find(User.ids[7]),
+    price: 35
   },
   {
     title: "High fashion interior designed kitchen",
     address: "Milan",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
-    user: User.find(User.ids[8])
+    user: User.find(User.ids[8]),
+    price: 50
   },
 ]
 
