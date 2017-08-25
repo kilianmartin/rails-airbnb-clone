@@ -1,6 +1,13 @@
 class KitchensController < ApplicationController
   def index
     @kitchens = Kitchen.all
+    @kitchens_map = Kitchen.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@kitchens_map) do |kitchen, marker|
+      marker.lat kitchen.latitude
+      marker.lng kitchen.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show

@@ -23,63 +23,63 @@ end
 kitchen_contents = [
   {
     title: "Bratwurst kitchen",
-    address: "Berlin",
+    address: "Am Wriezener Bahnhof, 10243 Berlin",
     description: "Intimate kitchen/dining space perfect for a bratwurst party",
     user: User.find(User.ids[0]),
     price: 15
   },
   {
     title: "English country-style kitchen",
-    address: "London",
+    address: "Hauptstrasse 15, 10317 Berlin",
     description: "Rural charm in an urban setting",
     user: User.find(User.ids[1]),
     price: 28
   },
   {
     title: "Soupe à l'oignon kitchen",
-    address: "Paris",
+    address: "Alt-Stralau 70, 10245 Berlin",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
     user: User.find(User.ids[2]),
     price: 40
   },
   {
     title: "Prego kitchen",
-    address: "Lisbon",
+    address: "Brückenstrasse 3, 10179 Berlin",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
     user: User.find(User.ids[3]),
     price: 19
   },
   {
     title: "Sushi kitchen",
-    address: "Tokyo",
+    address: "Vor dem Schlesischen Tor 3, 10997 Berlin",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
     user: User.find(User.ids[4]),
     price: 30
   },
   {
     title: "Tapas kitchen",
-    address: "Barcelona",
+    address: "Markgrafendamm 24c, 10245 Berlin",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
     user: User.find(User.ids[5]),
     price: 17
   },
   {
     title: "Fine European dining",
-    address: "Brussels",
+    address: "Gerichtstrasse 65, 13347 Berlin",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
     user: User.find(User.ids[6]),
     price: 25
   },
   {
     title: "Indonesian outdoor kitchen",
-    address: "Bali",
+    address: "Falckensteinstr. 49, 10997 Berlin",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
     user: User.find(User.ids[7]),
     price: 35
   },
   {
     title: "High fashion interior designed kitchen",
-    address: "Milan",
+    address: "Kopenicker Strasse 70, 10179 Berlin",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae venenatis velit. Vivamus porttitor nisi pulvinar, aliquet tellus vel, gravida.",
     user: User.find(User.ids[8]),
     price: 50
