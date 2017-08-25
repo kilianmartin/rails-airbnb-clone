@@ -16,6 +16,7 @@
 .booking-header-text {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
+  padding-bottom: 20px;
 }
 
 .booking-header-avatar {
@@ -24,12 +25,12 @@
   margin: 0 auto;
 }
 
-.panel-avatar {
+.panel-logo {
   width: 150px;
-  border-radius: 50%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  margin: 10px;
 }
 
 .booking-offer {
