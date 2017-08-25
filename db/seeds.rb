@@ -9,7 +9,7 @@
 Kitchen.destroy_all
 User.destroy_all
 
-9.times do
+20.times do
   User.create(
     email: Faker::Internet.email,
     password: Faker::Internet.password(8)
