@@ -24,7 +24,6 @@ class KitchensController < ApplicationController
   end
 
   def create
-
     @kitchens = filter_kitchens(params[:kitchen][:address], params[:kitchen][:title], params[:kitchen][:description] )
   end
 
