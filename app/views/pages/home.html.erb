@@ -3,7 +3,25 @@
     <div class="home-banner-content">
       <h1><%= "Find yours here!" %></h1>
       <h3><%= "There is a perfect kitchen for every occasion" %></h3>
+
+
     </div>
+
+
+        <%= simple_form_for([ @kitchen ]) do |form| %>
+          <%= form.input :address, label: false, placeholder: "City" %>
+          <div id="sandbox-container">
+            <div class="input-group input-daterange">
+              <%= form.input :title, label: false, placeholder: "Start Date", as: :string, input_html: { class: 'datepicker' } %>
+              <div class="input-group-addon datepickertoinvisible"></div>
+              <%= form.input :description, label: false, placeholder: "End Date", as: :string, input_html: { class: 'datepicker' } %>
+            </div>
+          </div>
+
+          <br>
+          <%= form.button :submit, "Search" %>
+        <% end %>
+
   </div>
 </div>
 
