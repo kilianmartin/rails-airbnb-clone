@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.save
-    redirect_to kitchens_path
+    redirect_to kitchen_path(@review.booking.kitchen)
   end
 
   def edit

@@ -23,8 +23,8 @@
 
       <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "overview", kitchens_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "my bookings", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Overview", kitchens_path, class: "navbar-wagon-item navbar-wagon-link font-adaption font" %>
+      <%= link_to "My Bookings", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link font-adaption font" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -74,7 +74,12 @@
   <%= yield %>
 
 
-  <%= javascript_include_tag 'application' %>
+
+  <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+
+  <%= javascript_include_tag "application" %>
 
   <%= yield(:after_js) %>
 
