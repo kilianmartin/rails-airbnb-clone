@@ -148,14 +148,14 @@ for kitchen in Kitchen.ids
     user_id: User.ids[4],
     kitchen_id: 15
     },
-     {
+
+    {
     start_date: Date.new(2017,8,21),
     end_date: Date.new(2017,8,25),
     status: "Pending",
     user_id: User.ids[5],
     kitchen_id: 14
     },
-
 
     {
     start_date: Date.new(2017,8,21),
@@ -295,90 +295,6 @@ for booking in Booking.ids
     rating: rand(1..5),
     comment: Faker::Lorem.paragraph(3, false, 4),
     booking_id: 6
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 7
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 8
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 9
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 10
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 11
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 12
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 13
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 14
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 15
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 16
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 17
-  },
-
-  {
-    title: Faker::Lorem.sentence,
-    rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
-    booking_id: 18
   }]
   )
 end
