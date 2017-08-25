@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
 
-  resources :kitchens, only: [ :index, :show, :create ] do
+  resources :kitchens, only: [ :index, :show, :create, :edit, :update ] do
     resources :bookings, only: [ :new, :create, :index, :show ]
     resources :reviews
   end
