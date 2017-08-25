@@ -32,12 +32,21 @@ class KitchensController < ApplicationController
 
   def create
     @kitchens = filter_kitchens(params[:kitchen][:address], params[:kitchen][:title], params[:kitchen][:description] )
+
+    @kitchens_map = Kitchen.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@kitchens) do |kitchen, marker|
+      marker.lat kitchen.latitude
+      marker.lng kitchen.longitude
+    end
+
   end
 
   def filter_kitchens(address, search_start_date, search_end_date)
     kitchens_returned = []
     search_range = search_start_date.to_date..search_end_date.to_date
-    Kitchen.where(address: address).each do |kitchen|
+
+    Kitchen.where('address LIKE ?', '%' + address + '%').all.each do |kitchen|
       overlap = ""
       kitchen.bookings.each do |booking|
         overlap = true if (search_range).overlaps?(booking.start_date..booking.end_date)
