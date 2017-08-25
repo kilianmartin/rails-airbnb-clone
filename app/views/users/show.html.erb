@@ -7,7 +7,7 @@
         <h2><%= "Your bookings:" %></h2>
       </div>
       <div class="booking-header-avatar">
-        <%= image_tag "Logo-green.png", {class: "panel-avatar"} %>
+        <%= image_tag "Logo-green.png", {class: "panel-logo"} %>
       </div>
       <div class="booking-offer">
         <%= link_to "Plan your next kitchen adventure", kitchens_path, {class: "btn btn-primary btn-lg btn-orange"} %>
@@ -45,8 +45,8 @@
               <div class="panel-review">
                 <div class="panel-center">
 
-                 <p><%= link_to "Show your review", kitchen_path(booking.kitchen) %></p>
-                 <p><%= link_to "Add another booking", new_kitchen_booking_path(booking.kitchen) %></p>
+                 <p><%= link_to "Add a review",  kitchen_booking_path(booking.kitchen, booking) %></p>
+                 <p><%= link_to "Add another booking", kitchen_path(booking.kitchen) %></p>
 
                </div>
              </div>

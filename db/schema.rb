@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 20170824153220) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_kitchens_on_user_id"
   end
 

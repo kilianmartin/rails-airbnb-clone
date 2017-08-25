@@ -53,6 +53,10 @@
             <td> <%= kitchen.user_id %></td>
           </tr>
           <tr>
+            <td><strong> Price per day:</strong></td>
+            <td> <%= "€" + kitchen.price.to_s %></td>
+          </tr>
+          <tr>
             <td><strong> Kitchen located at:</strong></td>
             <td> <%= kitchen.address %></td>
           </tr>
@@ -74,7 +78,7 @@
         </div>
         <%= form.input :status, as: :hidden, :input_html => { :value => 'Pending' } %>
         <br>
-        <%= form.button :submit %>
+        <%= form.button :submit, class: "btn btn-primary btn-lg btn-orange" %>
         <% end %>
 
 
