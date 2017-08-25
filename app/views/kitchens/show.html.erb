@@ -23,18 +23,18 @@
       <%= link_to raw('<i class="fa fa-chevron-left"></i> Back to kitchen overview'), kitchens_path %>
       </div>
       <div class="review-header">
-       <h2>Reviews for this kitchen</h2>
+       <h2 class="font">Reviews for this kitchen</h2>
       </div>
         <% @kitchen.reviews.reverse.each do |review| %>
-        <div class="review">
-          <div class="review-name">
+        <div class="review font">
+          <div class="review-name font">
           <p><% review.rating.times do %>
             <i class="fa fa-star" aria-hidden="true"></i>
             <% end %></p>
           </div>
           <div class="review-body">
-            <h3><%= review.title %></h3>
-            <div class="review-subbody">
+            <h3 class="font"><%= review.title %></h3>
+            <div class="review-subbody font">
              <p><%= review.comment %></p>
             </div>
           </div>
@@ -44,7 +44,7 @@
 
    <div class="right-wrapper">
     <div>
-      <h2>Kitchen details:</h2>
+      <h2 class="font">Kitchen details:</h2>
       <% kitchen = @kitchen %>
       <div class="table-responsive">
         <table class="table">
@@ -67,7 +67,7 @@
         </table>
       </div>
 
-        <h2>Please enter your booking dates:</h2>
+        <h2 class="font">Please enter your booking dates:</h2>
         <%= simple_form_for([ @kitchen, @booking ]) do |form| %>
         <div id="sandbox-container">
           <div class="input-group input-daterange">
@@ -78,7 +78,7 @@
         </div>
         <%= form.input :status, as: :hidden, :input_html => { :value => 'Pending' } %>
         <br>
-        <%= form.button :submit, class: "btn btn-primary btn-lg btn-orange" %>
+        <%= form.button :submit, class: "btn btn-primary btn-lg btn-orange font" %>
         <% end %>
 
 
