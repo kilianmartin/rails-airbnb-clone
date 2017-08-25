@@ -256,44 +256,44 @@ end
 
 for booking in Booking.ids
   Review.create([{
-    title: Faker::Lorem.sentence,
+    title: "Great spatula in this kitchen. Love it.",
     rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
+    comment: "This kitchen was soo great. I particularly loved the spatula.",
     booking_id: 1
   },
 
   {
-    title: Faker::Lorem.sentence,
+    title: "Wok an awesome kitchen!",
     rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
+    comment: "Wow. What an awesome wok in this kitchen. Nice blender too. Could do with a better wooden spoon.",
     booking_id: 2
   },
 
   {
-    title: Faker::Lorem.sentence,
+    title: "Great space, highly recommended",
     rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
+    comment: "I really enjoyed this kitchen. Such a great space for cooking and dining with friends",
     booking_id: 3
   },
 
   {
-    title: Faker::Lorem.sentence,
+    title: "THIS KITCHEN HAS AN AWESOME BLENDER",
     rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
+    comment: "I went to this kitchen expecting to chop. But I came away having successfully blended a lot too. Excellent blending, I will miss the blender.",
     booking_id: 4
   },
 
   {
-    title: Faker::Lorem.sentence,
+    title: "Wowzer - Global knives - cooolz. Lol.",
     rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
+    comment: "Really great equipment in this kitchen. So please not to have some crappy Ikea stuff, but proper chef quality utensils.",
     booking_id: 5
   },
 
   {
-    title: Faker::Lorem.sentence,
+    title: "Leaky tap, over-priced, want my money back.",
     rating: rand(1..5),
-    comment: Faker::Lorem.paragraph(3, false, 4),
+    comment: "Do not book this place. Looks good in the pics but the tap leaks",
     booking_id: 6
   }]
   )
