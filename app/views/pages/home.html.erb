@@ -34,7 +34,7 @@
 <div class="col-xs-12 col-md-10 col-md-offset-1">
   <div class="card-wrapper">
     <div class="container-fluid">
-    <h1 id="sample-cards"><%= "Check these out:" %></h1>
+    <h1 id="sample-cards" class="font">Check these out:</h1>
       <% kitchen_ids = Kitchen.ids.sample(3) %>
       <% kitchen_ids.each do |kitchen_id| %>
         <% kitchen = Kitchen.find(kitchen_id) %>
