@@ -1,5 +1,6 @@
 .testimonials {
   margin: 50px 0px;
+  margin-bottom: 75px;
 }
 
 .testimonial-card {
@@ -34,22 +35,22 @@
 
 .testimonial-left h1 {
   left: 170px;
-  top: 0px;
+  top: 25px;
 }
 
 .testimonial-left p {
   left: 170px;
-  top: 50px;
+  top: 75px;
 }
 
 .testimonial-right h1 {
-  right: 170px;
-  top: 0px;
+  right: 205px;
+  top: 25px;
 }
 
 .testimonial-right p {
   right: 170px;
-  top: 50px;
+  top: 75px;
 }
 
 .avatar-circle-right img {
@@ -60,4 +61,8 @@
 .avatar-circle-right {
   position: absolute;
   right: 0px;
+}
+
+.orange-color {
+  color: $orange
 }
